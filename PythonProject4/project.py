@@ -19,7 +19,7 @@ b=second_number*2-1
 for c in range(1,first_number+second_number+1):
     if c==first_number+second_number or c==1:
         print(" "*(first_number-1)+"/")
-    elif c==first_number or c==second_number+1:
+    elif c==first_number or c==second_numbegr+1:
         print("/" *( (first_number * 2)-1))
     elif c==(first_number+second_number)//2+1:
         print(" "*(second_number),"/"," "*(first_number),"/")
