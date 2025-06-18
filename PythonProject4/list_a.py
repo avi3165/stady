@@ -1,0 +1,22 @@
+#q1
+grades=[]
+#q2
+print(len(grades))
+#q3
+a=[90.4,83.5,76.8,70.1,53.2]
+grades=grades+a
+#q4
+print(grades,"the len of this list is: ",len(grades))
+#q5
+print(grades[0])
+#q6
+grades[0],grades[4]=grades[4],grades[0]
+print(grades)
+#q7
+names=['avi','david','or','arye','ron']
+#q8
+names_and_grades=[grades,names]
+#q9
+print(len(names_and_grades))
+#q10
+print(len(names_and_grades[0]))
