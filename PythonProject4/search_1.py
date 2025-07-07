@@ -1,4 +1,4 @@
-from binari_search import binari
+from binary_search import binary
 #1
 # def find_element(n:list[int],num:int):
 #     a=False
@@ -48,9 +48,6 @@ from binari_search import binari
 # num=[d,e]
 # Pair_numbers(n,num)
 #4
-# def in_sorted_matrix(m:list[list[int]],n:int):
-#     for i in m:
-#
 # def in_matrix(m:list,n:int):
 #     flag=False
 #     for i,v in enumerate(m):
@@ -73,40 +70,68 @@ from binari_search import binari
 # for i,v in enumerate(m):
 #     for j,h in enumerate(v):
 #         m[i][j]=int(h)
-# n=int(input("please enter a number to check:" ))
 # in_matrix(m,n)
 #challenge
-
-
+# def in_sorted_matrix(m:list[list[int]],n:int):
+#     for i,v in enumerate(m):
+#         b=binary(v,n)
+#         if b=="not found":
+#             continue
+#         else:
+#             return f"the number found in the matrix. \nrow index:{i} \ncolumn index: {b}"
+#     return b
+# n=int(input("please enter a number to check:" ))
+# d=[[1,4,7],[2,5,8],[3,6,9]]
+# print(in_sorted_matrix(d,n))
 #5
-list_3=[3,7,23,46,89,91,102,122,211]
-# def find_num(l:list,n:int):
-#     a = False
-#     for i,v in enumerate(list_3):
-#         if n==v:
-#             a=True
-#             print("the number found in index",i)
-#     if a == False:
-#         print("The number was not found")
-# #6
-# def find_num(l,n):
-#     print(l[0])
-#     print(l[-1])
+#list_3=[3,7,23,46,89,91,102,122,211]
+# def find_num_T_F(l:list,n:int):
+#     low=0
+#     high=len(l)-1
+#     while low<=high:
+#         mid=(low+high)//2
+#         if l[mid]==n:
+#             return True
+#         elif l[mid]>n:
+#             high=mid-1
+#         else:
+#             low=mid+1
+#     return False
+# print(find_num_T_F(list_3,7))
+#6
+# def find_num(l):
+#     print(f"the minimum value {l[0]}\nthe maximum value{l[-1]}")
+#     return None
+# find_num(list_3)
 #7
-# print(binari(list_3,91))
-#8
-l=[0,0,0,0,0,0,0,1,1,1,1,1,1]
-def binari_zero():
-    low = 0
-    high = len(l) - 1
-    while low <= high:
-        mid = (low + high) // 2
-        if l[mid] == 0:
-            if l[mid+1]==1:
-                return mid
-            else:
-                low = mid + 1
+def first_show(lis:list[int],num:int):
+    low=0
+    high=len(lis)-1
+    while low<=high:
+        mid=(low+high)//2
+        if lis[mid]==num and (lis[mid-1]<num or mid==0) :
+            return f"the first show of {num} is in index: {mid}"
+        elif lis[mid]==num and lis[mid-1]==num:
+            high-=1
+        elif lis[mid]<num:
+            low=mid+1
         else:
-            high = mid - 1
-    return None
-print(binari_zero())
+            high=mid-1
+    return 1
+print(first_show([1,1,2,2,3,3,4,4,5,5,6,6,7,8,9,9,10,11],12))
+#8
+# l=[0,0,0,0,0,0,0,1,1,1,1,1,1]
+# def binary_zero():
+#     low = 0
+#     high = len(l) - 1
+#     while low <= high:
+#         mid = (low + high) // 2
+#         if l[mid] == 0:
+#             if l[mid+1]==1:
+#                 return mid
+#             else:
+#                 low = mid + 1
+#         else:
+#             high = mid - 1
+#     return None
+# print(binary_zero())
