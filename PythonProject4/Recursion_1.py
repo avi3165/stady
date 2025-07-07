@@ -87,4 +87,4 @@ def fibonacci_numbers(num:int):
         return num
     else:
         return fibonacci_numbers(num-2)+fibonacci_numbers(num-1)
-print(fibonacci_numbers(100))
+print(fibonacci_numbers(10))
