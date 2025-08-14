@@ -33,21 +33,23 @@ class LinkedList:
             self._head=self._head.next
 
     def delete_after(self,data):
-        temp=self._head
-        while temp.next:
-            if temp.data == data:
-                deleted=temp.next
-                temp.next=temp.next.next
-                return deleted
-            temp = temp.next()
-        return None
+        if not self.is_empty():
+            temp=self._head
+            while temp.next:
+                if temp.data == data:
+                    deleted=temp.next
+                    temp.next=temp.next.next
+                    return deleted
+                temp = temp.next
+            return "The value you entered does not exist in the list."
+        return "The list is empty."
 
     def find(self,data):
         temp=self._head
         while temp:
             if temp.data == data:
                 return temp
-            temp = temp.next()
+            temp = temp.next
         return None
 
     def length(self):
@@ -70,11 +72,18 @@ class LinkedList:
         index = 0
         while temp:
             if index == num:
-                return temp
+                return temp.data
             temp = temp.next
             index+=1
         return None
-
-
-
-
+d1 = LinkedList()
+d1.push(10)
+d1.append(20)
+d1.append(30)
+d1.append(40)
+# d1.print_list()
+# print(d1.is_empty())
+# print(d1.length())
+# print(d1.find(20))
+# print(d1.find(50))
+print(d1.delete_after(100))
